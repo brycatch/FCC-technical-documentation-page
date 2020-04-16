@@ -1,5 +1,78 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap');
 * {
     margin: 0;
-    font-family: "Open Sans Condensed", sans-serif;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-areas: "header main";
+}
+
+.side-header {
+    grid-area: header;
+    text-align: center;
+    border-right: 2px solid black;
+}
+
+.side-header h1 {
+    padding: 10px;
+    font-size: 28px;
+}
+
+.side-header nav ul {
+    list-style: none;
+    text-align: start;
+    padding: 0;
+}
+
+.side-header nav ul li {
+    border-top: 1px solid black;
+    padding: 10px 20px;
+}
+
+.side-header a {
+    color: initial;
+    text-decoration: none;
+}
+
+main {
+    grid-area: main;
+}
+
+main .main-section {
+    padding: 5px 20px;
+}
+
+main .main-section header {
+    padding: 10px 0;
+    font-size: 24px;
+    text-align: start;
+}
+
+main h3 {
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+main p {
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+code {
+    font-family: monospace;
+    font-size: 12px;
+    background-color: #cecece;
+}
+
+main .code {
+    background-color: #cecece;
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "main";
+    }
 }

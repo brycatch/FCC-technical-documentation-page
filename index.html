@@ -9,7 +9,242 @@
 </head>
 
 <body>
-    Contenido
+    <header class="side-header">
+        <nav id="navbar">
+            <header>
+                <h1>Mongo Documentation</h1>
+            </header>
+            <ul>
+                <li>
+                    <a class="nav-link" href="#Introduction">Introduction</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Installation">Installation</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#The_Mongo_Shell">The Mongo Shell</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Mongo_CRUD_Operations">Mongo CRUD Operations</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Aggregation">Aggregation</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>
+                Welcome to the MongoDB 4.2 Manual! MongoDB is a document database designed for ease of development and
+                scaling. The Manual introduces key concepts in MongoDB, presents the query language, and provides
+                operational and administrative considerations and procedures as well as a comprehensive reference
+                section.
+            </p>
+            <p>
+                MongoDB offers both a <em>Community</em> and an <em>Enterprise</em> version of the database:
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        MongoDB Community is the source available and free to use edition of MongoDB.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        MongoDB Enterprise is available as part of the MongoDB Enterprise Advanced subscription and
+                        includes comprehensive support for your MongoDB deployment. MongoDB Enterprise also adds
+                        enterprise-focused features such as LDAP and Kerberos support, on-disk encryption, and auditing.
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="Installation">
+            <header>Installation</header>
+            <p>
+                MongoDB is available in two server editions: <em>Community</em> and <em>Enterprise.</em>
+            </p>
+            <p>
+                This section of the manual contains information on installing MongoDB.
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        For instructions on upgrading your current deployment to MongoDB 4.2, see Upgrade Procedures
+                        instead.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        For instructions on upgrading to the latest patch release for your current version, see Upgrade
+                        to the Latest Revision of MongoDB instead.
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="The_Mongo_Shell">
+            <header>The Mongo Shell</header>
+            <p>
+                The mongo shell is an interactive JavaScript interface to MongoDB. You can use the mongo shell to query
+                and update data as well as perform administrative operations.
+            </p>
+            <p>
+                The mongo shell is included as part of the MongoDB Server installation. MongoDB also provides the mongo
+                shell as a standalone package. To download the standalone mongo shell package:
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        Open the Download Center. For the mongo Enterprise Shell, select the MongoDB Enterprise Server
+                        tab.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Select your preferred Version and OS from the dropdowns.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Select the Package to download according to your platform.
+                    </p>
+                </li>
+            </ol>
+            <h3>Start the Mongo Shell and Connect</h3>
+            <p>
+                Ensure that MongoDB is running before attempting to start the mongo shell.
+            </p>
+            <p>
+                Open a terminal window (or a command prompt for Windows) and go to your
+                <code>&lt;mongodb installation dir/bin&gt;</code>
+                directory:
+            </p>
+            <p class="code">
+                <code>
+                    cd &lt;mongodb installation dir&gt;/bin
+                </code>
+            </p>
+            <h3>Local MongoDb Instance on Default Port</h3>
+            <p>
+                You can run mongo shell without any command-line options to connect to a MongoDB instance running on
+                your localhost with default port 27017:
+            </p>
+            <p class="code">
+                <code>
+                    mongo
+                </code>
+            </p>
+        </section>
+        <section class="main-section" id="Mongo_CRUD_Operations">
+            <header>Mongo CRUD Operations</header>
+            <p>
+                CRUD operations create, read, update, and delete documents.
+            </p>
+            <h3>
+                Create Operations
+            </h3>
+            <p>
+                Create or insert operations add new documents to a collection. If the collection does not currently
+                exist, insert operations will create the collection.
+            </p>
+            <p>
+                MongoDB provides the following methods to insert documents into a collection:
+            </p>
+            <ul>
+                <li>
+                    <p class="code">
+                        <code>
+                            db.collection.insertOne()
+                        </code>
+                    </p>
+                </li>
+                <li>
+                    <p class="code">
+                        <code>
+                            db.collection.insertMany() 
+                        </code>
+                    </p>
+                </li>
+            </ul>
+            <h3>
+                Read Operations
+            </h3>
+            <p>
+                Read operations retrieves documents from a collection; i.e. queries a collection for documents. MongoDB
+                provides the following methods to read documents from a collection:
+            </p>
+            <ul>
+                <li>
+                    <p class="code">
+                        <code>
+                            db.collection.find()
+                        </code>
+                    </p>
+                </li>
+            </ul>
+            <h3>
+                Update Operations
+            </h3>
+            <p>
+                Update operations modify existing documents in a collection. MongoDB provides the following methods to
+                update documents of a collection:
+            </p>
+            <ul>
+                <li>
+                    <p class="code">
+                        <code>
+                            db.collection.updateOne()
+                        </code>
+                    </p>
+                </li>
+                <li>
+                    <p class="code">
+                        <code>
+                            db.collection.updateMany()
+                        </code>
+                    </p>
+                </li>
+                <li>
+                    <p class="code">
+                        <code>
+                            db.collection.replaceOne()
+                        </code>
+                    </p>
+                </li>
+            </ul>
+            <h3>Delete Operations</h3>
+            <p>
+                Delete operations remove documents from a collection. MongoDB provides the following methods to delete
+                documents of a collection:
+            </p>
+            <ul>
+                <li>
+                    <p class="code">
+                        <code>
+                            db.collection.deleteOne() 
+                        </code>
+                    </p>
+                </li>
+                <li>
+                    <p class="code">
+                        <code>
+                            db.collection.deleteMany()
+                        </code>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="Aggregation">
+            <header>Aggregation</header>
+            <p>
+                Aggregation operations process data records and return computed results. Aggregation operations group
+                values from multiple documents together, and can perform a variety of operations on the grouped data to
+                return a single result. MongoDB provides three ways to perform aggregation: the aggregation pipeline,
+                the map-reduce function, and single purpose aggregation methods.
+            </p>
+        </section>
+    </main>
 </body>
 <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 
